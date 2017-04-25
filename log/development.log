@@ -1,0 +1,1162 @@
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateLists (20170425140811)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170425140811"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Migrating to CreateItems (20170425140854)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "list_id" integer, "name" varchar, "position" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170425140854"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2017-04-25 10:31:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.6/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 68ms (Views: 53.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2017-04-25 10:31:47 -0400
+
+ActionController::RoutingError (No route matches [GET] "/login"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (18.8ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (162.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (74.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (156.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 10:53:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (0.2ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1033ms (Views: 1014.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-04-25 10:53:50 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2017-04-25 10:53:50 -0400
+
+
+Started GET "/assets/lists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-04-25 10:53:50 -0400
+
+
+Started GET "/" for ::1 at 2017-04-25 10:59:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (0.1ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 5288ms (Views: 5269.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-60ff546ca634926045822baefb43c91efb6fbc773597c16cb9f3e3ef7adca77b.css?body=1" for ::1 at 2017-04-25 10:59:30 -0400
+
+
+Started GET "/lists/new" for ::1 at 2017-04-25 10:59:35 -0400
+Processing by ListsController#new as HTML
+  Rendered lists/new.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 104ms (Views: 93.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/lists" for ::1 at 2017-04-25 10:59:41 -0400
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"885jleAXsRr6Alm48geIzweWb8rdGG9FTl1wGeQCmAdrJr8sBM+OamPT8Eq+U6KNRm9jrq+gxKGua45LCaA5VQ==", "list"=>{"name"=>"Groceries"}, "commit"=>"Add New List"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Groceries"], ["created_at", "2017-04-25 14:59:41.781727"], ["updated_at", "2017-04-25 14:59:41.781727"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/dashboard
+Completed 302 Found in 30ms (ActiveRecord: 4.8ms)
+
+
+Started GET "/lists/dashboard" for ::1 at 2017-04-25 10:59:41 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (1.8ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/lists/dashboard" for ::1 at 2017-04-25 11:00:27 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[36mList Load (0.7ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/dashboard.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/lists/dashboard" for ::1 at 2017-04-25 11:00:36 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (0.1ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:00:39 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.4ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 122ms (Views: 32.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:00:40 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 60ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:00:43 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DuSedPU/LmBSdfiAD2Si3BMYPggjEs0WKcbgI07w7xg007ANwzDyRiYfhBMabjJMbVsnFI04NC4keXSYJli7g==", "item"=>{"name"=>"Item", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Item"], ["list_id", 1], ["created_at", "2017-04-25 15:00:43.298972"], ["updated_at", "2017-04-25 15:00:43.298972"], ["position", 1]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:00:43 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:01:45 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:01:53 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:01:59 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:02:22 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:02:45 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 45.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:03:45 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.8ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 86ms (Views: 65.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:03:56 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:04:59 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:05:13 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:05:32 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 60ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:05:43 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:10:36 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 100ms (Views: 79.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:10:41 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lxb09CFWtP18LBGZX3MDgMTFSiKiDwOQwW65iO0w7z4P/ihNxY6LjeX9uGsTJynChTxGRtC3qHQhWEfaAJJObA==", "item"=>{"name"=>"Item2", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Item2"], ["list_id", 1], ["created_at", "2017-04-25 15:10:41.852985"], ["updated_at", "2017-04-25 15:10:41.852985"], ["position", 2]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:10:41 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 152ms (Views: 122.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/items/2" for ::1 at 2017-04-25 11:10:44 -0400
+
+ActionController::RoutingError (No route matches [POST] "/items/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.8ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.9ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (144.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (165.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 11:16:09 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[36mList Load (0.4ms)[0m  [1mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/dashboard.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:16:13 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.4ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 74ms (Views: 63.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/items/1" for ::1 at 2017-04-25 11:16:17 -0400
+
+ActionController::RoutingError (No route matches [POST] "/items/1"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (96.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (66.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 11:18:47 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (1.0ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:18:49 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 62ms (Views: 53.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/items/up/2" for ::1 at 2017-04-25 11:18:51 -0400
+Processing by ItemsController#up as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 2) AND ("items".id != 2)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 2) AND ("items".id != 2)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 2) AND ("items".id != 2)  ORDER BY "items"."position" DESC LIMIT 1[0m  [["list_id", 1]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["position", 2], ["updated_at", "2017-04-25 15:18:51.415861"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 2)[0m  [["list_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "items" SET "position" = ("items"."position" - 1), "updated_at" = '2017-04-25 15:18:51.431188' WHERE "items"."list_id" = ? AND ("items".id != 1) AND ("items"."position" > 1) AND ("items"."position" <= 2)  [["list_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["position", 1], ["updated_at", "2017-04-25 15:18:51.433034"], ["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 1)  [["list_id", 1]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 41ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:18:51 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:18:54 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 11:19:00 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (0.1ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:19:01 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/items/up/2" for ::1 at 2017-04-25 11:19:04 -0400
+Processing by ItemsController#up as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 1) AND ("items".id != 2)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:19:04 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:13 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 59ms (Views: 43.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:23:15 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 52ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:23:19 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iJaCQYkhg1LA0hu78PyDMaeK6yY0jayOu/qDRIy8mLIQfl74bfm8IlkDskm8qKlz5nPnQkY1B2pbzH0WYR454A==", "item"=>{"name"=>"Item3", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Item3"], ["list_id", 1], ["created_at", "2017-04-25 15:23:19.950415"], ["updated_at", "2017-04-25 15:23:19.950415"], ["position", 3]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:19 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/1" for ::1 at 2017-04-25 11:23:23 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"L51grUuPju9U76xA39NpyYolKVgqi+dfAASQaDzSBGK3dbwUr1exn80+BbKTh0OLy9wlPFgzTLvgMm460XClMA==", "id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (2.4ms)[0m  UPDATE "items" SET "position" = ("items"."position" - 1), "updated_at" = '2017-04-25 15:23:23.821648' WHERE "items"."list_id" = ? AND ("items"."position" > 2)  [["list_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["position", nil], ["updated_at", "2017-04-25 15:23:23.832289"], ["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 0)[0m  [["list_id", 1]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 28ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:23 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:29 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/2" for ::1 at 2017-04-25 11:23:35 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YFcOEvT0S66sAx0K9X3JVV+aRJpj+6z4fI6zGX47y+X4v9KrECx03jXStPi5KeMXHmNI/hFDBxycuE1Lk5lqtw==", "id"=>"2"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSQL (2.5ms)[0m  UPDATE "items" SET "position" = ("items"."position" - 1), "updated_at" = '2017-04-25 15:23:36.006826' WHERE "items"."list_id" = ? AND ("items"."position" > 1)  [["list_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["position", nil], ["updated_at", "2017-04-25 15:23:36.010319"], ["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 0)[0m  [["list_id", 1]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:36 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:38 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 34ms (Views: 32.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:23:59 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 50ms (Views: 37.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/items/1" for ::1 at 2017-04-25 11:24:03 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OAN2wxVcGLpQ6BzPBCV0+BGBL3RpUn0+TlHSZVFKJh+g66p68YQnysk5tT1IcV66UHgjEBvq1tquZyw3vOiHTQ==", "id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1 [0m  [["id", 1]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "items" WHERE "items"."id" = ?  [["id", 1]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 12ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:03 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:05 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/up/2" for ::1 at 2017-04-25 11:24:07 -0400
+Processing by ItemsController#up as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:07 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 60ms (Views: 54.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/up/2" for ::1 at 2017-04-25 11:24:08 -0400
+Processing by ItemsController#up as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:08 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 43ms (Views: 40.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/items/2" for ::1 at 2017-04-25 11:24:08 -0400
+
+ActionController::RoutingError (No route matches [POST] "/items/2"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.2ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (126.0ms)
+
+
+Started DELETE "/items/2" for ::1 at 2017-04-25 11:24:19 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OTrF6+rgog0mBae6SKCxdQbadxxTHYQV4aBXBEp3wMqh0hlSDjidfb/UDkgE9Js3RyN7eCGlL/EBlqlWp9VhmA==", "id"=>"2"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1   [["id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 2]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 10ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:19 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.3ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/items/3" for ::1 at 2017-04-25 11:24:22 -0400
+
+ActionController::RoutingError (No route matches [POST] "/items/3"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (87.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.6ms)
+
+
+Started DELETE "/items/3" for ::1 at 2017-04-25 11:24:29 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"O+l7GURupXsn/SW5wPYOGJsV0LPF9In5VNcSRl0YNbOjAaegoLaaC74sjEuMoiRa2uzc17dMIh204ewUsLqU4Q==", "id"=>"3"}
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1 [0m  [["id", 3]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "items" WHERE "items"."id" = ?  [["id", 3]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "items" SET "position" = ("items"."position" - 1), "updated_at" = '2017-04-25 15:24:29.014049' WHERE "items"."list_id" = ? AND ("items"."position" > 1)[0m  [["list_id", 1]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:29 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:24:30 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:24:33 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Qe6yxIwxwZbOIoDmBGUZP4FVxjq5HvdQqPcvju5j39XZBm59aOn+5lfzKRRIMTN9wKzKXsumXLRIwdHcA8F+hw==", "item"=>{"name"=>"Item1", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Item1"], ["list_id", 1], ["created_at", "2017-04-25 15:24:33.911792"], ["updated_at", "2017-04-25 15:24:33.911792"], ["position", 1]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 6ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:33 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:24:35 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 48ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:24:38 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+tHPKiiOrwI4SU0X68yC55sSSed7G2+u7ghVQcGTfGzA5uFTHoFzJEwjMYT+xhJ35VFQ+9Uxlpbjt8H6qTsow==", "item"=>{"name"=>"Item2", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Item2"], ["list_id", 1], ["created_at", "2017-04-25 15:24:38.181402"], ["updated_at", "2017-04-25 15:24:38.181402"], ["position", 2]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:38 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:24:39 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:24:42 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zW53pemHBFjoevDlezm+N42G08xsZ779+cqhvqA1ot9VhqscDV87KHGrWRc3bZR1zH/fqB7fFRkZ/F/sTZcDjQ==", "item"=>{"name"=>"Item3", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Item3"], ["list_id", 1], ["created_at", "2017-04-25 15:24:42.221183"], ["updated_at", "2017-04-25 15:24:42.221183"], ["position", 3]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:24:42 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.1ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/5" for ::1 at 2017-04-25 11:25:07 -0400
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8xT9qzYKiwPkqPt9FOMEtgTaG88K/GEnRZOu4Ou2MEVr/CES0tK0c315Uo9Yty70RSMXq3hEysOlpVCyBhSRFw==", "id"=>"5"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSQL (1.6ms)[0m  UPDATE "items" SET "position" = ("items"."position" - 1), "updated_at" = '2017-04-25 15:25:07.441193' WHERE "items"."list_id" = ? AND ("items"."position" > 2)  [["list_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["position", nil], ["updated_at", "2017-04-25 15:25:07.444150"], ["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 0)[0m  [["list_id", 1]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1   [["id", 5]]
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 5]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 19ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:25:07 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 42ms (Views: 33.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/items/up/6" for ::1 at 2017-04-25 11:25:08 -0400
+Processing by ItemsController#up as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 2) AND ("items".id != 6)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 2) AND ("items".id != 6)  ORDER BY "items"."position" DESC LIMIT 1  [["list_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" <= 2) AND ("items".id != 6)  ORDER BY "items"."position" DESC LIMIT 1[0m  [["list_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["position", 2], ["updated_at", "2017-04-25 15:25:08.980390"], ["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 2)[0m  [["list_id", 1]]
+  [1m[35mSQL (0.9ms)[0m  UPDATE "items" SET "position" = ("items"."position" - 1), "updated_at" = '2017-04-25 15:25:08.986604' WHERE "items"."list_id" = ? AND ("items".id != 4) AND ("items"."position" > 1) AND ("items"."position" <= 2)  [["list_id", 1]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["position", 1], ["updated_at", "2017-04-25 15:25:08.989280"], ["id", 6]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 1)  [["list_id", 1]]
+  [1m[36m (5.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 27ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:25:09 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/items/6" for ::1 at 2017-04-25 11:25:11 -0400
+
+ActionController::RoutingError (No route matches [POST] "/items/6"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (94.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.0ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.0ms)
+
+
+Started POST "/items/6" for ::1 at 2017-04-25 11:26:45 -0400
+
+ActionController::RoutingError (No route matches [POST] "/items/6"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (136.7ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Bryan/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (187.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-25 11:27:04 -0400
+Processing by ListsController#dashboard as HTML
+  [1m[35mList Load (0.1ms)[0m  SELECT "lists".* FROM "lists"
+  Rendered lists/dashboard.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 27.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:27:05 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/down/6" for ::1 at 2017-04-25 11:27:07 -0400
+Processing by ItemsController#down as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" >= 1) AND ("items".id != 6)  ORDER BY "items"."position" ASC LIMIT 1  [["list_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" >= 1) AND ("items".id != 6)  ORDER BY "items"."position" ASC LIMIT 1  [["list_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" >= 1) AND ("items".id != 6)  ORDER BY "items"."position" ASC LIMIT 1[0m  [["list_id", 1]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["position", 1], ["updated_at", "2017-04-25 15:27:07.323336"], ["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 1)[0m  [["list_id", 1]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "items" SET "position" = ("items"."position" + 1), "updated_at" = '2017-04-25 15:27:07.327913' WHERE "items"."list_id" = ? AND ("items".id != 4) AND ("items"."position" >= 1) AND ("items"."position" < 2)  [["list_id", 1]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["position", 2], ["updated_at", "2017-04-25 15:27:07.329570"], ["id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 2)  [["list_id", 1]]
+  [1m[36m (7.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 27ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:27:07 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.1ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/top/6" for ::1 at 2017-04-25 11:27:11 -0400
+Processing by ItemsController#top as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "items" SET "position" = ("items"."position" + 1), "updated_at" = '2017-04-25 15:27:11.310381' WHERE "items"."list_id" = ? AND ("items"."position" < 2)  [["list_id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["position", 1], ["updated_at", "2017-04-25 15:27:11.311856"], ["id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 1)  [["list_id", 1]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 11ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:27:11 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:27:14 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:27:17 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cs8Y7ZSNbrC/5o8lkujBkfjy7TW/CCw9vnZX0alnTJvqJ8RUcFVRwCY3JtfevOvTuQvhUc2wh9leQKmDRMXtyQ==", "item"=>{"name"=>"Item4", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1[0m  [["list_id", 1]]
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)  [["name", "Item4"], ["list_id", 1], ["created_at", "2017-04-25 15:27:17.571333"], ["updated_at", "2017-04-25 15:27:17.571333"], ["position", 3]]
+  [1m[36m (3.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 9ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:27:17 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/new/1" for ::1 at 2017-04-25 11:27:18 -0400
+Processing by ItemsController#new as HTML
+  Parameters: {"list_id"=>"1"}
+  Rendered items/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2017-04-25 11:27:21 -0400
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BOcU0bDvYvZouFpUFfGgOrsgepbxFUv7MlFaAM+CxROcD8hoVDddhvFp86ZZpYp4+tl28oOt4B/SZ6RSIiBkQQ==", "item"=>{"name"=>"Item5", "list_id"=>"1"}, "commit"=>"Add New Item"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" IS NOT NULL)  ORDER BY "items"."position" DESC LIMIT 1[0m  [["list_id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "items" ("name", "list_id", "created_at", "updated_at", "position") VALUES (?, ?, ?, ?, ?)  [["name", "Item5"], ["list_id", 1], ["created_at", "2017-04-25 15:27:21.860918"], ["updated_at", "2017-04-25 15:27:21.860918"], ["position", 4]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:27:21 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/top/8" for ::1 at 2017-04-25 11:27:23 -0400
+Processing by ItemsController#top as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "items" SET "position" = ("items"."position" + 1), "updated_at" = '2017-04-25 15:27:23.424850' WHERE "items"."list_id" = ? AND ("items"."position" < 4)  [["list_id", 1]]
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "items" SET "position" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["position", 1], ["updated_at", "2017-04-25 15:27:23.425999"], ["id", 8]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "items" WHERE "items"."list_id" = ? AND ("items"."position" = 1)  [["list_id", 1]]
+  [1m[36m (5.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/lists/view/1
+Completed 302 Found in 14ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/lists/view/1" for ::1 at 2017-04-25 11:27:23 -0400
+Processing by ListsController#view as HTML
+  Parameters: {"list_id"=>"1"}
+  [1m[35mList Load (0.2ms)[0m  SELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?  ORDER BY "items"."position" ASC[0m  [["list_id", 1]]
+  Rendered lists/view.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.4ms)
